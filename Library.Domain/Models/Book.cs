@@ -5,13 +5,13 @@ using System.Net;
 using System.Text;
 
 namespace Library.Domain.Models {
-    internal class Book {
+    public class Book {
         private int _id;
         private string _title;
-        private int _publicationYear;
+        private DateOnly _publicationYear;
         private Author _author;
 
-        public Book(int id, string title, int publicationYear, Author author) {
+        public Book(int id, string title, DateOnly publicationYear, Author author) {
             Id = id;
             Title = title;
             PublicationYear = publicationYear;
@@ -22,7 +22,7 @@ namespace Library.Domain.Models {
 
         public string Title { get => _title; set => _title = value; }
 
-        public int PublicationYear { get => _publicationYear; set => _publicationYear = value; }
+        public DateOnly PublicationYear { get => _publicationYear; set => _publicationYear = value; }
 
         public Author Author { get => _author; set => _author = value; }
     }

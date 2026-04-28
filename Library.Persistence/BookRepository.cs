@@ -1,14 +1,13 @@
-﻿using Library.Domain.Repository;
+﻿using Library.Domain.Models;
+using Library.Domain.Repository;
 using Microsoft.Data.SqlClient;
 
 namespace Library.Persistence
 {
-    public class BookRepository : IBookRepository
-	{
+    public class BookRepository : IBookRepository {
         private readonly string _connectionString;
 
-        public BookRepository(string connectionString)
-        {
+        public BookRepository(string connectionString) {
             _connectionString = connectionString;
         public List<Book> GetBooksByAutor(Author author) {
             using SqlConnection connection = new("Data Source=.;Initial Catalog=Library;Integrated Security=True;Pooling=False;Encrypt=True;Trust Server Certificate=True");
@@ -31,6 +30,19 @@ namespace Library.Persistence
                 }
             }
             return output;
+        }
+        public void CreateBook(string name, DateOnly publishDate, Author author) {
+            using SqlConnection connection = new(_connectionString);
+            connection.Open();
+
+            using SqlCommand command = new("INSERT INTO Book (Name, PublishDate, AuthorId) Values (@name, @publishDate, @Author);", connection);
+            command.Parameters.AddWithValue("@name", name);
+            command.Parameters.AddWithValue("@publishDate", publishDate);
+            command.Parameters.AddWithValue("@Author", author);
+
+            command.ExecuteNonQuery();
+
+            connection.Close();
         }
     }
 }
