@@ -12,8 +12,8 @@ namespace Library.Persistence.Models
 
         public Author(int id, string name)
         {
-            _id = id;
-            _name = name;
+            Id = id;
+            Name = name;
         }
 
         public int Id { get =>  _id;  set => _id = value; }
