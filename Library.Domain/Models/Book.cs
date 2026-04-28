@@ -1,17 +1,14 @@
-﻿using Library.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Text;
-
-namespace Library.Domain.Models {
-    internal class Book {
+﻿namespace Library.Domain.Models
+{
+    public class Book
+    {
         private int _id;
         private string _title;
         private int _publicationYear;
         private Author _author;
 
-        public Book(int id, string title, int publicationYear, Author author) {
+        public Book(int id, string title, int publicationYear, Author author)
+        {
             Id = id;
             Title = title;
             PublicationYear = publicationYear;

@@ -4,14 +4,17 @@ using Microsoft.Data.SqlClient;
 namespace Library.Persistence
 {
     public class BookRepository : IBookRepository
-	{
+    {
         private readonly string _connectionString;
 
         public BookRepository(string connectionString)
         {
             _connectionString = connectionString;
-        public List<Book> GetBooksByAutor(Author author) {
-            using SqlConnection connection = new("Data Source=.;Initial Catalog=Library;Integrated Security=True;Pooling=False;Encrypt=True;Trust Server Certificate=True");
+        }
+
+        public List<Book> GetBooksByAutor(Author author)
+        {
+            using SqlConnection connection = new(_connectionString);
             connection.Open();
 
             using SqlCommand command = new(@"SELECT * FROM Books WHERE AuthorId = @authorId", connection);
@@ -20,8 +23,10 @@ namespace Library.Persistence
 
             List<Book> output = [];
 
-            if (reader.HasRows) {
-                while (reader.Read()) {
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
                     int id = (int)reader["Id"];
                     string name = (string)reader["Name"];
                     int publishDate = (int)reader["PublishDate"];
@@ -31,6 +36,17 @@ namespace Library.Persistence
                 }
             }
             return output;
+        }
+
+        public List<Book> LendExistingBooks(Book book, Lender lender) 
+        {
+            using SqlConnection connection = new(_connectionString);
+            connection.Open();
+
+            //using SqlCommand command = new(@"SELECT * FROM Books WHERE AuthorId = @authorId", connection);
+            //command.Parameters.AddWithValue("@bookId", book.Id);
+            //using SqlDataReader reader = command.ExecuteReader();
+
         }
     }
 }
