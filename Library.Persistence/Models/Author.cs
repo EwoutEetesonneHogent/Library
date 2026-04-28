@@ -15,5 +15,10 @@ namespace Library.Persistence.Models
             _id = id;
             _name = name;
         }
+
+        public int Id { get =>  _id;  set => _id = value; }
+
+        public string Name { get => _name; set => _name = value; }
+
     }
 }
