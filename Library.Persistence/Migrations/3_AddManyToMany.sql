@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[BookLendings]
+﻿CREATE TABLE [Library].[dbo].[BookLendings]
 (
 	[Id] INT NOT NULL PRIMARY KEY IDENTITY,
 	[BookId] INT NOT NULL,
