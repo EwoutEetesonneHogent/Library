@@ -18,7 +18,13 @@ namespace Library.Domain.Models {
             Author = author;
         }
 
-        public int Id { get => _id; set => _id = value; }
+        public int Id {
+            get => _id;
+            set {
+                ArgumentOutOfRangeException.ThrowIfLessThan(value, 0);
+                _id = value;
+            }
+        }
 
         public string Title { get => _title; set => _title = value; }
 
