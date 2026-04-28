@@ -6,10 +6,13 @@ namespace Library.Persistence.Models
 {
     internal class Author
     {
+        private int _id;
+
         private string _name;
 
-        public Author(string name)
+        public Author(int id, string name)
         {
+            _id = id;
             _name = name;
         }
     }
