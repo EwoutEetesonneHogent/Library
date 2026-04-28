@@ -12,5 +12,9 @@ namespace Library.Domain
             _bookRepository = bookRepository;
             _lendingRepository = lendingRepository;
         }
+
+        public List<Book> GetBooksByAuthor(Author author) {
+            return _bookRepository.GetBooksByAutor(author);
+        }
     }
 }

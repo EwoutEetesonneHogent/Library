@@ -2,5 +2,6 @@
 {
     public interface IBookRepository
     {
+        public List<Book> GetBooksByAuthor(Author author);
     }
 }

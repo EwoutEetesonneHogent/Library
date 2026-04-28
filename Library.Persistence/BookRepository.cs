@@ -5,7 +5,7 @@ namespace Library.Persistence
 {
     public class BookRepository : IBookRepository
 	{
-        public List<Book> GetBooksByAutor(Author author) {
+        public List<Book> GetBooksByAuthor(Author author) {
             using SqlConnection connection = new("Data Source=.;Initial Catalog=Library;Integrated Security=True;Pooling=False;Encrypt=True;Trust Server Certificate=True");
             connection.Open();
 
