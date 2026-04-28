@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Library.Domain.Models;
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Text;
 
-namespace Library.Persistence.Models {
+namespace Library.Domain.Models {
     internal class Book {
         private int _id;
         private string _title;
