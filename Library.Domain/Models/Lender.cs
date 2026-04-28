@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Library.Domain.Models
 {
-    public class Lenders
+    public class Lender
     {
         public int _id;
         private string _name;
@@ -14,7 +14,7 @@ namespace Library.Domain.Models
 
 
 
-        public Lenders(int id, string name)
+        public Lender(int id, string name)
         {
             _id = id;
             _name = name;

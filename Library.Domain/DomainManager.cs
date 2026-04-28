@@ -13,12 +13,12 @@ namespace Library.Domain
             _bookRepository = bookRepository;
             _lendingRepository = lendingRepository;
         }
-        public List<Lenders> GetAllLenders()
+        public List<Lender> GetAllLenders()
         {
             return _lendingRepository.GetAllLenders();
         }
 
-        public void AddLenders(Lenders lender)
+        public void AddLender(Lender lender)
         {
             _lendingRepository.AddLender(lender);
         }

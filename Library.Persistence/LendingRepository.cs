@@ -12,12 +12,12 @@ namespace Library.Persistence
         {
             _connectionString = connectionString;
         }
-        public List<Lenders> GetAllLenders()
+        public List<Lender> GetAllLenders()
         {
             using SqlConnection connection = new(_connectionString);
             connection.Open();
             using SqlCommand command = new("SELECT * FROM Lenders", connection);
-            List<Lenders> lenders = [];
+            List<Lender> lenders = [];
 
             using (SqlDataReader reader = command.ExecuteReader())
             {
@@ -28,7 +28,7 @@ namespace Library.Persistence
                         int LendersId = (int)reader["Id"];
                         string name = (string)reader["Name"];
 
-                        Lenders lender = new(LendersId, name);
+                        Lender lender = new(LendersId, name);
                         lenders.Add(lender);
 
                     }
@@ -37,7 +37,7 @@ namespace Library.Persistence
             return lenders;
         }
 
-        public void AddLender(Lenders lender)
+        public void AddLender(Lender lender)
         {
             using SqlConnection connection = new(_connectionString);
             connection.Open();
