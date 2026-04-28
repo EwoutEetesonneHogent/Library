@@ -13,7 +13,7 @@ namespace Library.Domain.Models {
             Name = name;
         }
 
-        public int Id { get => _id; set => _id = value; }
+        public int Id { get => _id; set { ArgumentOutOfRangeException.ThrowIfLessThan(value, 0); _id = value; } }
 
         public required string Name { get => _name; set => _name = value; }
 
