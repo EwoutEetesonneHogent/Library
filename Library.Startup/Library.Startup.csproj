@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Library.Domain\Library.Domain.csproj" />
     <ProjectReference Include="..\Library.Persistence\Library.Persistence.csproj" />
     <ProjectReference Include="..\Library.Presentation\Library.Presentation.csproj" />
