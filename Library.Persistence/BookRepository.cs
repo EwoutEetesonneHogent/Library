@@ -32,5 +32,18 @@ namespace Library.Persistence
             }
             return output;
         }
+
+        public void Delete(int id)
+        {
+            using SqlConnection connection = new SqlConnection(_connectionString);
+            connection.Open();
+
+            using SqlCommand cmd = new("Delete FROM Books WHERE Id = @id",
+                connection);
+
+            cmd.Parameters.AddWithValue("@id", Id);
+
+            cmd.ExecuteNonQuery();
+        }
     }
 }

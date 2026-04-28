@@ -2,6 +2,6 @@
 {
     public interface IBookRepository
     {
-     
+     void Delete(int id);
     }
 }
