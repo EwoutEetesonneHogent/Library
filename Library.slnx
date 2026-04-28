@@ -1,1 +1,6 @@
-<Solution />
+<Solution>
+  <Project Path="Library.Domain/Library.Domain.csproj" Id="a313af88-f1f3-4bb3-a1b7-3882f07f565f" />
+  <Project Path="Library.Persistence/Library.Persistence.csproj" Id="788e8541-ec28-4876-a0c4-d2dd7259e697" />
+  <Project Path="Library.Presentation/Library.Presentation.csproj" Id="ba13abb7-11a3-46ed-8f21-89b57cab4535" />
+  <Project Path="Library.Startup/Library.Startup.csproj" Id="100e8f6f-bcbd-4f8f-882d-81fae8035a1e" />
+</Solution>

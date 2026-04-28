@@ -7,4 +7,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Library.Domain\Library.Domain.csproj" />
+    <ProjectReference Include="..\Library.Persistence\Library.Persistence.csproj" />
+    <ProjectReference Include="..\Library.Presentation\Library.Presentation.csproj" />
+  </ItemGroup>
+
 </Project>
