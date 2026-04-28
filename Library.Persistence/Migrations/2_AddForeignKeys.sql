@@ -6,5 +6,5 @@
 	ALTER TABLE [Library].[dbo].[Lenders]
 
 	ADD [LendingId] INT NOT NULL, 
-    CONSTRAINT [FK_LendingsLenders] FOREIGN KEY ([LendingId]) REFERENCES [Lendings]([Id])
+    CONSTRAINT [FK_Lendings_Lenders] FOREIGN KEY ([LendingId]) REFERENCES [Lendings]([Id])
 
