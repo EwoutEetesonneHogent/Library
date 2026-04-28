@@ -6,6 +6,7 @@ using Library.Presentation;
 // Arnout was here
 
 IBookRepository bookRepository = new BookRepository();
+
 ILendingRepository lendingRepository = new LendingRepository();
 
 DomainManager domainManager = new(bookRepository, lendingRepository);
