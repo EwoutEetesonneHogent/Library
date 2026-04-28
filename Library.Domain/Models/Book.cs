@@ -5,7 +5,7 @@ using System.Net;
 using System.Text;
 
 namespace Library.Domain.Models {
-    internal class Book {
+    public class Book {
         private int _id;
         private string _title;
         private int _publicationYear;

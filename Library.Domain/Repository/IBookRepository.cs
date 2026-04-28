@@ -1,7 +1,9 @@
-﻿namespace Library.Domain.Repository
+﻿using Library.Domain.Models;
+
+namespace Library.Domain.Repository
 {
     public interface IBookRepository
     {
-        public List<Book> GetBooksByAuthor(Author author);
+        List<Book> GetBooksByAuthor(Author author);
     }
 }

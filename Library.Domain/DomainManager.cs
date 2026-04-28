@@ -1,4 +1,5 @@
-﻿using Library.Domain.Repository;
+﻿using Library.Domain.Models;
+using Library.Domain.Repository;
 
 namespace Library.Domain
 {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace Library.Domain.Models {
-    internal class Author {
+    public class Author {
         private int _id;
 
         private string _name;
