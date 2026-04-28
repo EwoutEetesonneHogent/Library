@@ -14,7 +14,7 @@ namespace Library.Domain
         }
 
         public List<Book> GetBooksByAuthor(Author author) {
-            return _bookRepository.GetBooksByAutor(author);
+            return _bookRepository.GetBooksByAuthor(author);
         }
     }
 }
