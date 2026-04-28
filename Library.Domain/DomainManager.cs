@@ -1,4 +1,5 @@
-﻿using Library.Domain.Repository;
+﻿using Library.Domain.Models;
+using Library.Domain.Repository;
 
 namespace Library.Domain
 {
@@ -11,6 +12,15 @@ namespace Library.Domain
         {
             _bookRepository = bookRepository;
             _lendingRepository = lendingRepository;
+        }
+        public List<Lender> GetAllLenders()
+        {
+            return _lendingRepository.GetAllLenders();
+        }
+
+        public void AddLender(Lender lender)
+        {
+            _lendingRepository.AddLender(lender);
         }
     }
 }
