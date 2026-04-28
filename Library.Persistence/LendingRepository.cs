@@ -1,4 +1,5 @@
 ﻿using Library.Domain.Repository;
+using Microsoft.Data.SqlClient;
 
 namespace Library.Persistence
 {
@@ -9,6 +10,14 @@ namespace Library.Persistence
         public LendingRepository(string connectionString)
         {
             _connectionString = connectionString;
+        }
+
+        public bool ExtendLendingDueDate(int lendingId)
+        {
+            using SqlConnection connection = new(_connectionString);
+            connection.Open();
+
+            using SqlCommand command = new SqlCommand("UPDATE Lendings SET ReturnDate = DATEADD(dat, 14, ReturnDate) WHERE Id = @LendingId", connection);
         }
     }
 }

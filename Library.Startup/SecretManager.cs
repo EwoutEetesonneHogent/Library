@@ -16,7 +16,6 @@ namespace Library.Startup
             {
                 _configurationManager = new();
                 _configurationManager.AddUserSecrets(Assembly.GetExecutingAssembly());
-
             }
 
             internal static string GetSecret(string key)

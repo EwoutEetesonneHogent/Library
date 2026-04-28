@@ -25,6 +25,7 @@ namespace Library.Presentation
                         "Find book(s) by author",
                         "Show lenders with loans on alphabetic order",
                         "Show books that are overdue",
+                        "Extend lending due date by 14 days",
                         "Close"
                         ));
 
@@ -40,6 +41,10 @@ namespace Library.Presentation
                         break;
                     case "Show books that are overdue":
                         ShowOverdueBooks();
+                        break;
+                    case "Extend lending due date by 14 days":
+                        ExtendLendingDueDate();
+                        break;
                         break;
                     case "Close":
                         running = false;
@@ -117,6 +122,24 @@ namespace Library.Presentation
             table.AddRow("Due date");
             
             AnsiConsole.Write(table);
+        }
+
+        private void ExtendLendingDueDate()
+        {
+            int lendingId = AnsiConsole.Ask<int>("Enter the ID of the lending to extend: ");
+
+            bool isExtended = _domainManager.ExtendLendingDueDate(lendingId);
+
+            if (isExtended)
+            {
+                AnsiConsole.MarkupLine("[green]Lending due date has been extended by 14 days.");
+            } else
+            {
+                AnsiConsole.MarkupLine("[red]Could not extend lending date. Check the lending ID.");
+            }
+
+            AnsiConsole.MarkupLine("[grey]Press any key to return to the main menu...");
+            Console.ReadKey(true);
         }
     }
 }

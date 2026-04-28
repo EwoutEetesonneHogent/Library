@@ -2,5 +2,6 @@
 {
     public interface ILendingRepository
     {
+        bool ExtendLendingDueDate(int lendingId);
     }
 }

@@ -12,5 +12,10 @@ namespace Library.Domain
             _bookRepository = bookRepository;
             _lendingRepository = lendingRepository;
         }
+
+        public bool ExtendLendingDueDate(int lendingId)
+        {
+            return _lendingRepository.ExtendLendingDueDate(lendingId);
+        }
     }
 }
