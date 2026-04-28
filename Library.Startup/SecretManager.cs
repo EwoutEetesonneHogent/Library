@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Library.Startup
 {
-    internal class SecretManager
+    public class SecretManager
     {
 
         internal static class SecretsManager
