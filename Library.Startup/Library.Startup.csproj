@@ -5,7 +5,12 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <UserSecretsId>b10335b9-b5a4-492d-abc0-675f2a76ec50</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.1" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Library.Domain\Library.Domain.csproj" />
