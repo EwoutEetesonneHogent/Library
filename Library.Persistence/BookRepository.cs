@@ -7,9 +7,11 @@ namespace Library.Persistence
 	{
         private readonly string _connectionString;
 
-        public BookRepository(string connectionString)
-        {
-            _connectionString = connectionString;
+		public BookRepository(string connectionString)
+		{
+			_connectionString = connectionString;
+		}
+
         public List<Book> GetBooksByAutor(Author author) {
             using SqlConnection connection = new("Data Source=.;Initial Catalog=Library;Integrated Security=True;Pooling=False;Encrypt=True;Trust Server Certificate=True");
             connection.Open();
