@@ -17,5 +17,10 @@ namespace Library.Domain
         {
             return _lendingRepository.GetAllLenders();
         }
+
+        public void AddLenders(Lenders lender)
+        {
+            _lendingRepository.AddLender(lender);
+        }
     }
 }

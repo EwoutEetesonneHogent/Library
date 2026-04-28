@@ -36,5 +36,14 @@ namespace Library.Persistence
             }
             return lenders;
         }
+
+        public void AddLender(Lenders lender)
+        {
+            using SqlConnection connection = new(_connectionString);
+            connection.Open();
+            using SqlCommand command = new("INSERT INTO Lenders (Name) VALUES (@name)", connection);
+            command.Parameters.AddWithValue("@name", lender.Name);
+            command.ExecuteNonQuery();
+        }
     }
 }
